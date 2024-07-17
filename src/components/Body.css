@@ -1,0 +1,8 @@
+.task-col-heading{
+    display: flex;
+    align-items: center;
+}
+.task-col-icon{
+    width: 30px;
+    margin-right: 5px;
+}

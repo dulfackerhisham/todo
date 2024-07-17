@@ -1,7 +1,6 @@
 .app{
     display: grid;
     grid-template-rows: 150px auto;
-    /* border: 1px solid; */
     padding: 5px;
 }
 
@@ -16,6 +15,5 @@
 
 .task-column{
     width: 33.33%;
-    background-color: tomato;
     margin:20px;
 }

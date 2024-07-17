@@ -1,12 +1,21 @@
+import "./Body.css"
+const Body = ({title, icon}) => {
 
-const Body = () => {
+
   return (
-    <main className="body">
-        <section className="task-column">section 1</section>
-        <section className="task-column">section 2</section>
-        <section className="task-column">section 3</section>
-    </main>
+    <>
+        <section className="task-column">
+
+          <h2 className="task-col-heading" >
+            <img className="task-col-icon" src={icon} alt="" />
+            {title}
+            </h2>
+            
+        </section>
+
+    </>
+
   )
-}
+};
 
 export default Body;
