@@ -1,0 +1,38 @@
+.task-card{
+    width: 100%;
+    min-height: 100px;
+    border: 1px solid;
+    border-radius: 5px;
+    padding: 15px;
+    margin: 15px 0;
+}
+
+.task-text{
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+.task-card-bottom{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.task-dlt{
+    width: 35px;
+    height: 35px;
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.task-dlt:hover{
+    background-color: rgb(200, 0, 0);
+}
+
+.dlt-icon{
+    width: 20px;
+    transition: all 0.3s ease-in-out;
+}

@@ -1,4 +1,5 @@
 import "./Body.css"
+import TaskCard from "./TaskCard";
 const Body = ({title, icon}) => {
 
 
@@ -10,6 +11,8 @@ const Body = ({title, icon}) => {
             <img className="task-col-icon" src={icon} alt="" />
             {title}
             </h2>
+
+            <TaskCard />
             
         </section>
 
