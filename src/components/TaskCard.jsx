@@ -2,15 +2,16 @@ import "./TaskCard.css"
 import Tag from "./Tag"
 import dltIcon from "../assets/dlt.png"
 
-const TaskCard = () => {
+const TaskCard = ({title, tags}) => {
     return(
         <article className="task-card">
-            <p className="task-text">This is Sample Text.</p>
+            <p className="task-text">{title}</p>
 
             <div className="task-card-bottom">
                 <div className="task-card-tags">
-                    <Tag tagName="HTML" />
-                    <Tag tagName="CSS" />
+                    {
+                        tags.map((tag, index) => <Tag key={index} tagName={tag}/>)
+                    }
                 </div>
                 <div className="task-dlt">
                     <img className="dlt-icon" src={dltIcon} alt="" />

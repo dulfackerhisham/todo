@@ -1,6 +1,6 @@
 import "./Body.css"
 import TaskCard from "./TaskCard";
-const Body = ({title, icon}) => {
+const Body = ({title, icon, tasks, status}) => {
 
 
   return (
@@ -12,7 +12,13 @@ const Body = ({title, icon}) => {
             {title}
             </h2>
 
-            <TaskCard />
+            
+
+            {tasks.map((task, index) => 
+            task.status === status && <TaskCard 
+            key={index} 
+            title={task.task} 
+            tags={task.tags}/>)}
             
         </section>
 

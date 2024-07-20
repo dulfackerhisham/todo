@@ -2,13 +2,17 @@ import "./TaskForm.css";
 import Tag from "./Tag";
 import { useState } from "react";
 
-const TaskForm = () => {
+const TaskForm = ({setTasks}) => {
 
     const [taskData, setTaskData] = useState({
         task: "",
         status: "todo",
         tags: []
     })
+
+    const checkTag = (tag) => {
+        return taskData.tags.some(item => item === tag)
+    }
 
     const selectTag = (tag) => {
         if(taskData.tags.some(item => item === tag)) {
@@ -22,7 +26,7 @@ const TaskForm = () => {
             })
         }
     };
-    console.log(taskData.tags);
+    // console.log(taskData.tags);
 
     const handleChange = (e) => {
         const name = e.target.name
@@ -38,6 +42,9 @@ const TaskForm = () => {
     const handleSubmit = (e) => {
         e.preventDefault()
         console.log(taskData);
+        setTasks(prev => {
+            return [...prev, taskData];
+        })
     }
     // const [task, setTask] = useState("");
 
@@ -62,10 +69,17 @@ const TaskForm = () => {
 
                 <div className="form-bottom">
                     <div>
-                        <Tag tagName="HTML" selectTag={selectTag}/>
-                        <Tag tagName="CSS" selectTag={selectTag}/>
-                        <Tag tagName="JavaScript" selectTag={selectTag}/>
-                        <Tag tagName="React" selectTag={selectTag}/>
+                        <Tag tagName="HTML" selectTag={selectTag}
+                        selected={checkTag("HTML")}/>
+
+                        <Tag tagName="CSS" selectTag={selectTag}
+                        selected={checkTag("CSS")}/>
+
+                        <Tag tagName="JavaScript" selectTag={selectTag}
+                        selected={checkTag("JavaScript")}/>
+                        
+                        <Tag tagName="React" selectTag={selectTag}
+                        selected={checkTag("React")}/>
                     </div>
 
 
